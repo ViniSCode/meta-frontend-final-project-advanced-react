@@ -12,23 +12,23 @@ import React, { useEffect, useRef, useState } from "react";
 const socials = [
   {
     icon: faEnvelope,
-    url: "https://mail.google.com/mail/?view=cm&fs=1&to=jairrodriguesmd@gmail.com",
+    url: "mailto: hello@example.com",
   },
   {
     icon: faGithub,
-    url: "https://github.com/viniscode",
+    url: "https://github.com/",
   },
   {
     icon: faLinkedin,
-    url: "https://www.linkedin.com/in/vinicius-rodrigues-5897831b8/",
+    url: "https://www.linkedin.com/",
   },
   {
     icon: faMedium,
-    url: "https://medium.com/@jairrodriguesmd",
+    url: "https://medium.com/",
   },
   {
     icon: faStackOverflow,
-    url: "https://stackoverflow.com/users/19504763/vin%c3%adcius-rodrigues",
+    url: "https://stackoverflow.com/",
   },
 ];
 
