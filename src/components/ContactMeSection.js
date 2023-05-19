@@ -20,6 +20,7 @@ import FullScreenSection from "./FullScreenSection";
 const ContactMeSection = () => {
   const { isLoading, response, submit } = useSubmit();
   const { onOpen } = useAlertContext();
+
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -28,9 +29,9 @@ const ContactMeSection = () => {
       comment: "",
     },
     onSubmit: (values) => {
-      console.log(values);
       submit("url", values);
     },
+
     validationSchema: Yup.object({
       firstName: Yup.string().required("Required"),
       email: Yup.string().email("Invalid email address").required("Required"),
@@ -51,16 +52,19 @@ const ContactMeSection = () => {
   } = formik;
 
   useEffect(() => {
+    console.log(response);
+
     if (response && response.type === "success") {
-      console.log("Success response:", response);
-      console.log("Form values:", values);
       onOpen(
         "success",
         `Thank you, ${values.firstName}! Your form has been submitted successfully.`
       );
       resetForm();
     } else if (response && response.type === "error") {
-      console.log("Error response:", response);
+      onOpen(
+        "error",
+        response.message || "Something went wrong, please try again later!"
+      );
     }
   }, [response]);
 
@@ -111,8 +115,8 @@ const ContactMeSection = () => {
                   id="type"
                   name="type"
                   value={values.type}
+                  onChange={handleChange}
                   onBlur={handleBlur}
-                  onChange={(event) => handleChange(event, "type")}
                 >
                   <option value="hireMe">Freelance project proposal</option>
                   <option value="openSource">
