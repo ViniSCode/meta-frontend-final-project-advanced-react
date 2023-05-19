@@ -12,7 +12,7 @@ import React, { useEffect, useRef, useState } from "react";
 const socials = [
   {
     icon: faEnvelope,
-    url: "mailto: hello@example.com",
+    url: "https://mail.google.com/mail/?view=cm&fs=1&to=jairrodriguesmd@gmail.com",
   },
   {
     icon: faGithub,
@@ -89,7 +89,7 @@ const Header = () => {
           <nav>
             <HStack>
               {socials.map(({ url, icon }) => (
-                <a href={url} key={url}>
+                <a href={url} key={url} target="_blank">
                   <FontAwesomeIcon icon={icon} size="2x" />
                 </a>
               ))}
