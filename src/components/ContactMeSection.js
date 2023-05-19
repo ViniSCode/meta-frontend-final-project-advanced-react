@@ -20,7 +20,6 @@ import FullScreenSection from "./FullScreenSection";
 const ContactMeSection = () => {
   const { isLoading, response, submit } = useSubmit();
   const { onOpen } = useAlertContext();
-
   const formik = useFormik({
     initialValues: {
       firstName: "",
